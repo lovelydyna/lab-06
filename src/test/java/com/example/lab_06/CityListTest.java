@@ -51,4 +51,8 @@ public class CityListTest {
         assertEquals(0, mockCity().compareTo(cityList.getCities().get(1)));
     }
 
+    // TODO: Add/update unit tests for hasCity, delete, countCities 
+    // TODO: Run unit tests: ./gradlew test and ensure green
+    // TODO: Generate Javadocs to /app/javadocs and verify output
+
 }
