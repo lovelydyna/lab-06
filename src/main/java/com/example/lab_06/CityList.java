@@ -33,6 +33,40 @@ public class CityList {
         return list;
     }
 
+    /**
+     * Checks if a City object exists in the list.
+     * @param city the City object to check
+     * @return true if the City object exists, false otherwise
+     */
+    public boolean hasCity(City city) {
+        if (city == null) {
+            throw new IllegalArgumentException("City cannot be null");
+        }
+        return cities.contains(city);
+    }
 
+    /**
+     * Deletes a City object from the list.
+     * @param city the City object to delete
+     */
+    public void delete(City city) {
+        if (city == null) {
+            throw new IllegalArgumentException("City cannot be null");
+        }
+        if (!cities.contains(city)) {
+            throw new IllegalArgumentException("City does not exist");
+        }
+        cities.remove(city);
+    }
 
+    /**
+     * Counts the number of City objects in the list.
+     * @return the number of City objects in the list
+     */
+    public int countCities() {
+        if (cities.size() >= 0) {
+            return cities.size();
+        }
+        return 0;
+    }
 }
