@@ -1,4 +1,4 @@
-package com.example.listycity;
+package com.example.lab_06;
 
 import org.junit.jupiter.api.Test;
 
@@ -51,7 +51,33 @@ public class CityListTest {
         assertEquals(0, mockCity().compareTo(cityList.getCities().get(1)));
     }
 
-    // TODO: Add/update unit tests for hasCity, delete, countCities 
+    // TODO: Add/update unit tests for hasCity, delete, countCities
+    @Test
+    void testHasCity() {
+        CityList cityList = mockCityList();
+        assertTrue(cityList.hasCity(mockCity()));
+        assertFalse(cityList.hasCity(new City("Nonexistent", "Nowhere")));
+    }
+
+    @Test
+    void testDelete() {
+        CityList cityList = mockCityList();
+        City city = new City("Calgary", "Alberta");
+        cityList.add(city);
+        assertEquals(2, cityList.getCities().size());
+        cityList.delete(city);
+        assertEquals(1, cityList.getCities().size());
+        assertFalse(cityList.getCities().contains(city));
+
+    }
+
+    @Test
+    void testCountCities() {
+        CityList cityList = mockCityList();
+        assertEquals(1, cityList.countCities());
+        cityList.add(new City("Calgary", "Alberta"));
+        assertEquals(2, cityList.countCities());
+    }
     // TODO: Run unit tests: ./gradlew test and ensure green
     // TODO: Generate Javadocs to /app/javadocs and verify output
 

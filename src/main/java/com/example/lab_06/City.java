@@ -1,4 +1,4 @@
-package com.example.listycity;
+package com.example.lab_06;
 import java.util.Objects;
 
 /**
